@@ -27,7 +27,6 @@ body {
 	background-repeat: no-repeat;
 	background-size: cover; /* Ensure the image covers the entire area */
 	background-position: center;
-	padding: 20px; /* Optional, add padding around the content */
 	color: white; /* Make text color white or adjust for visibility */
 	height: 90vh; /* Ensure the container takes full height */
 }
@@ -49,7 +48,6 @@ body {
 .ext-background .content {
 	position: relative;
 	z-index: 1; /* Keep the text above the blurred background */
-	padding: 15%;
 	font-size: 20px; /* Adjust font size as needed */
 }
 
@@ -57,7 +55,6 @@ body {
 .ext-background .content {
 	position: relative;
 	z-index: 1;
-	padding: 20px;
 	font-size: 24px;
 	text-align: center;
 }
@@ -66,4 +63,17 @@ body {
 	margin-top: 15px; /* Add some space at the top */
 	margin-bottom: 10px; /* Add some space at the bottom */
 }
+
+.profile-img {
+	width: 30px; /* Small size for the image */
+	height: 30px;
+	object-fit: cover; /* Ensures the image fits inside the circle */
+	border-radius: 50%; /* Makes it circular */
+}
+
+.table td, .table th {
+	padding: .8rem; /* Increase row padding */
+	font-size: 1.0rem; /* Increase font size */
+}
+
 
