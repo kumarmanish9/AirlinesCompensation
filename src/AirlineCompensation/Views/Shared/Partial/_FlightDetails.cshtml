@@ -1,0 +1,39 @@
+﻿@model IEnumerable<AirlineCompensation.Models.Flight>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <span>Flight</span>
+            </th>
+            <th>
+                <span>Trip</span>
+            </th>
+            <th>
+                <span>Departure</span>
+            </th>
+            <th>
+                <span>#Pax</span>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FlightNumber)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Departure) - @Html.DisplayFor(modelItem => item.Arrival)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ScheduledData)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NumberOfPax)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

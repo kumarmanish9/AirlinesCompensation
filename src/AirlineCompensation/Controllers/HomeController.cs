@@ -1,5 +1,6 @@
 using AirlineCompensation.Models;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using System.Diagnostics;
 
 namespace AirlineCompensation.Controllers
@@ -18,7 +19,17 @@ namespace AirlineCompensation.Controllers
 			return View();
 		}
 
-		public IActionResult Privacy()
+        public IActionResult Login(Login login)
+        {
+			if (ModelState.IsValid)
+			{
+                TempData["UserProfile"] = login.Username;
+                return RedirectToAction("", "Dashboard");
+            }
+			return View("Index");
+        }
+
+        public IActionResult Dashboard()
 		{
 			return View();
 		}

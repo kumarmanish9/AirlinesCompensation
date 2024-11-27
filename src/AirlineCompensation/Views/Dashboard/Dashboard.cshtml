@@ -1,0 +1,20 @@
+﻿@model FlightView
+
+@{
+    ViewData["Title"] = "Flying Together - Dashboard";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-5">
+    <div class="row">
+        <!-- Flight Details (30%) -->
+        <div class="col-12 col-md-4">
+            @await Html.PartialAsync("Partial/_FlightDetails", Model.Flights)
+        </div>
+
+        <!-- Pax Details (70%) -->
+        <div class="col-12 col-md-8">
+            @await Html.PartialAsync("Partial/_PassengerDetails", Model.Passengers)
+        </div>
+    </div>
+</div>
