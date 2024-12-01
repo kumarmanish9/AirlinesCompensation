@@ -11,7 +11,7 @@ namespace AirlineCompensation.Controllers
             string? userProfile = TempData["UserProfile"] as string;
             @ViewData["UserProfile"] = userProfile;
 
-            var flights = await flight.GetFlights();
+            List<Flight>? flights = await flight.GetFlights();
             var passengers = await passenger.GetPassenger(flights?.FirstOrDefault());
             var flightView = new FlightView()
             {

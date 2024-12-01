@@ -3,3 +3,38 @@
 
 // Write your JavaScript code.
 
+$(document).ready(function () {
+
+	$("#tblPassenger tbody tr").not('.hidden-content').on("click", function () {
+		// Highlight the clicked row
+		$(this).toggleClass("highlight");
+
+		// Toggle the visibility of the next hidden div
+		$(this).next(".hidden-content").find(".hidden-div").slideToggle();
+		$(this).next(".hidden-content").toggleClass("highlight");
+
+		var name = $(this).find("td:nth-child(2)").text().trim(); // Get the second cell's text
+
+		// Display the data in an alert
+		//alert("Name: " + name);
+
+	});
+
+	// Trigger when any row checkbox is changed
+	$('.row-checkbox').change(function () {
+		// Check if any checkbox is checked
+		if ($('.row-checkbox:checked').length > 0) {
+			$('#offerDiv').fadeIn(); // Show the floating div
+		} else {
+			$('#offerDiv').fadeOut(); // Hide the floating div
+		}
+	});
+
+	// Optional: Add action for the Send Offer button
+	$('#sendOfferBtn').click(function () {
+		alert('Offer Sent!');
+	});
+
+});
+
+

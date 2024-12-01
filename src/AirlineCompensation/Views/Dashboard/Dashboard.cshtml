@@ -8,13 +8,18 @@
 <div class="container mt-5">
     <div class="row">
         <!-- Flight Details (30%) -->
-        <div class="col-12 col-md-4">
+        <div class="col-12 col-md-4 table-responsive">
             @await Html.PartialAsync("Partial/_FlightDetails", Model.Flights)
         </div>
 
         <!-- Pax Details (70%) -->
-        <div class="col-12 col-md-8">
+        <div class="col-12 col-md-8 table-responsive">
             @await Html.PartialAsync("Partial/_PassengerDetails", Model.Passengers)
+
+            <div id="offerDiv" class="col-12 text-center">
+                <strong>Send offer to pax or group of pax</strong>
+                <button id="sendOfferBtn" type="button" class="btn btn-outline-primary">Primary</button>
+            </div>
         </div>
     </div>
 </div>
