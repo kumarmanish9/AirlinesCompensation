@@ -14,8 +14,9 @@
 
         <!-- Pax Details (70%) -->
         <div class="col-12 col-md-8 table-responsive">
-            @await Html.PartialAsync("Partial/_PassengerDetails", Model.Passengers)
-
+            <div id="passengerDetailsContainer">
+                @await Html.PartialAsync("Partial/_PassengerDetails", Model.Passengers)
+            </div>
             <div id="offerDiv" class="col-12 text-center">
                 <strong>Send offer to pax or group of pax</strong>
                 <button id="sendOfferBtn" type="button" class="btn btn-outline-primary">Send Offer</button>
