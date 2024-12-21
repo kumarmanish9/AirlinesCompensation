@@ -13,7 +13,7 @@ builder.Services.AddSession(options =>
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddMyDependency();
+builder.Services.RegisterAppServices();
 
 var app = builder.Build();
 
