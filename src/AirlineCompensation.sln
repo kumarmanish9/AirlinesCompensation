@@ -5,8 +5,6 @@ VisualStudioVersion = 17.11.35327.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AirlineCompensation", "AirlineCompensation\AirlineCompensation.csproj", "{DA45B931-ACD1-40C1-9263-34381D14E076}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AirlineCoreLibrary", "..\..\AirlineCoreLibrary\src\AirlineCoreLibrary\AirlineCoreLibrary.csproj", "{25531DB5-F66F-47C7-9B09-D3288B5154F8}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,10 +15,6 @@ Global
 		{DA45B931-ACD1-40C1-9263-34381D14E076}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DA45B931-ACD1-40C1-9263-34381D14E076}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DA45B931-ACD1-40C1-9263-34381D14E076}.Release|Any CPU.Build.0 = Release|Any CPU
-		{25531DB5-F66F-47C7-9B09-D3288B5154F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{25531DB5-F66F-47C7-9B09-D3288B5154F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{25531DB5-F66F-47C7-9B09-D3288B5154F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{25531DB5-F66F-47C7-9B09-D3288B5154F8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -11,10 +11,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\AirlineCoreLibrary\src\AirlineCoreLibrary\AirlineCoreLibrary.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Content Update="wwwroot\css\dashboard.css">
       <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
