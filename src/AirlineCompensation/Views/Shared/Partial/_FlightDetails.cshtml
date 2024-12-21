@@ -21,7 +21,7 @@
         @foreach (var item in Model)
         {
             <tr>
-                <td>
+                <td data-flight-key="@item.FlightKey">
                     @Html.DisplayFor(modelItem => item.FlightNumber)
                 </td>
                 <td>

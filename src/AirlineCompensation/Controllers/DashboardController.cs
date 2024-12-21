@@ -1,7 +1,6 @@
 ﻿using AirlineCoreLibrary.Model;
 using AirlineCoreLibrary.Service;
 using Microsoft.AspNetCore.Mvc;
-using System.Threading.Tasks;
 
 namespace AirlineCompensation.Controllers
 {
@@ -13,7 +12,8 @@ namespace AirlineCompensation.Controllers
             @ViewData["UserProfile"] = userProfile;
 
             List<Flight>? flights = await flight.GetFlights();
-            var passengers = await passenger.GetPassenger(flights?.FirstOrDefault());
+            string flightKey = flights?.Count != 0 ? flights?[0].FlightKey ?? string.Empty : string.Empty;
+            var passengers = await passenger.GetPassengers(flightKey);
             var flightView = new FlightView()
             {
                 Flights = flights,
@@ -35,7 +35,7 @@ namespace AirlineCompensation.Controllers
             try
             {
                 // Retrieve passenger details
-                var passengers = await passenger.GetPassengerV2(flight);
+                var passengers = await passenger.GetPassengers(flight.FlightKey ?? string.Empty);
                 
                 // If no passengers found, return a meaningful message
                 if (passengers == null || !passengers.Any())
