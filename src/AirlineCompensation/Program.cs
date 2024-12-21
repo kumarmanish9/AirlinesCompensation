@@ -1,4 +1,4 @@
-using AirlineCompensation.Utility;
+using AirlineCoreLibrary.Utility;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,7 +13,10 @@ builder.Services.AddSession(options =>
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddMyDependency();
+builder.Services.RegisterAppServices();
+
+// Add HttpClient services
+builder.Services.AddHttpClient();
 
 var app = builder.Build();
 

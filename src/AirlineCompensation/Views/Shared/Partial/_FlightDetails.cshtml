@@ -1,4 +1,4 @@
-﻿@model IEnumerable<AirlineCompensation.Models.Flight>
+﻿@model IEnumerable<AirlineCoreLibrary.Model.Flight>
 
 <table id="tblFlight" class="table table-hover">
     <thead class="table">
@@ -21,14 +21,14 @@
         @foreach (var item in Model)
         {
             <tr>
-                <td>
+                <td data-flight-key="@item.FlightKey">
                     @Html.DisplayFor(modelItem => item.FlightNumber)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Departure) - @Html.DisplayFor(modelItem => item.Arrival)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.ScheduledData)
+                    @Html.DisplayFor(modelItem => item.ScheduledDate)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.NumberOfPax)

@@ -20,13 +20,13 @@ $(document).ready(function () {
         $(this).addClass("highlight");
 
         // Get some data from the selected row (e.g., Flight ID or Number)
-        var flightNumber = $(this).find("td:first").text().trim();
+        var flightKey = $(this).find("td:first").data('flight-key'); 
 
         $.ajax({
             url: "/Dashboard/GetFlightDetails",
             type: "POST",
             contentType: "application/json; charset=utf-8",
-            data: JSON.stringify({ FlightNumber: "AB123", Departure: "New York" }), // Use properties matching your 'Flight' model
+            data: JSON.stringify({ FlightKey: flightKey }), // Use properties matching your 'Flight' model
             success: function (response) {
                 $("#passengerDetailsContainer").html(response); // Inject partial view into the container
                 reinitializeBindings();
