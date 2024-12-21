@@ -1,5 +1,5 @@
-﻿using AirlineCompensation.Models;
-using AirlineCompensation.Service;
+﻿using AirlineCoreLibrary.Model;
+using AirlineCoreLibrary.Service;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 

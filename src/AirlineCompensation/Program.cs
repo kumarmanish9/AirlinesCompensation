@@ -1,4 +1,4 @@
-using AirlineCompensation.Utility;
+using AirlineCoreLibrary.Utility;
 
 var builder = WebApplication.CreateBuilder(args);
 
