@@ -12,8 +12,8 @@ $(document).ready(function () {
 
     reinitializeBindings();
 
-
-    $("#tblFlight tbody").on("click", "tr", function () {
+    $("#tblFlight tbody").on("click", "tr", function (event) {
+        
         // Remove 'highlight' class from all rows
         $("#tblFlight tbody tr").removeClass("highlight");
         // Add 'highlight' class to the clicked row
@@ -21,6 +21,9 @@ $(document).ready(function () {
 
         // Get some data from the selected row (e.g., Flight ID or Number)
         var flightKey = $(this).find("td:first").data('flight-key'); 
+
+        // Store the flightKey in sessionStorage
+        sessionStorage.setItem("flightKey", flightKey);
 
         $.ajax({
             url: "/Dashboard/GetFlightDetails",
@@ -43,7 +46,13 @@ $(document).ready(function () {
 // Function to reinitialize events and CSS
 function reinitializeBindings() {
     
-    $("#tblPassenger tbody tr").not('.hidden-content').on("click", function () {
+    $("#tblPassenger tbody tr").not('.hidden-content').on("click", function (event) {
+        // Find the closest <td> that was clicked
+        if ($(event.target).closest("td").hasClass("inactive")
+            || $(event.target).parent().hasClass("inactive")) {
+            return; // Exit if the clicked <td> is inactive
+        }
+        debugger
         // Highlight the clicked row
         $(this).toggleClass("highlight");
 
