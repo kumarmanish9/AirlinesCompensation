@@ -24,7 +24,7 @@ namespace AirlineCompensation.Controllers
                 if (passengerResponse.StatusCode == System.Net.HttpStatusCode.OK)
                 {
                     var passengerMessage = await passengerResponse.Content.ReadAsStringAsync();
-                    List<Passenger>? passengers = JsonConvert.DeserializeObject<List<Passenger>>(passengerMessage);
+                    List<PassengerCompenation>? passengers = JsonConvert.DeserializeObject<List<PassengerCompenation>>(passengerMessage);
                     var flightView = new FlightView()
                     {
                         Flights = flights,
@@ -60,11 +60,11 @@ namespace AirlineCompensation.Controllers
                 if (passengerResponse.StatusCode == System.Net.HttpStatusCode.OK)
                 {
                     var passengerMessage = await passengerResponse.Content.ReadAsStringAsync();
-                    List<Passenger>? passengers = JsonConvert.DeserializeObject<List<Passenger>>(passengerMessage);
+                    List<PassengerCompenation>? passengers = JsonConvert.DeserializeObject<List<PassengerCompenation>>(passengerMessage);
                     // If no passengers found, return a meaningful message
                     if (passengers == null || !passengers.Any())
                     {
-                        return PartialView("Partial/_PassengerDetails", new List<Passenger>()); // Return an empty list or a default view
+                        return PartialView("Partial/_PassengerDetails", new List<PassengerCompenation>()); // Return an empty list or a default view
                     }
                     else
                     {
@@ -74,7 +74,7 @@ namespace AirlineCompensation.Controllers
                 else
                 {
                     // Return the partial view with the passenger data
-                    return PartialView("Partial/_PassengerDetails", new List<Passenger>()); // Return an empty list or a default view
+                    return PartialView("Partial/_PassengerDetails", new List<PassengerCompenation>()); // Return an empty list or a default view
                 }
             }
             catch (Exception ex)
